@@ -1,0 +1,50 @@
+.selected-token{
+    background-color: #e6e6e6;
+}
+[v-cloak] {
+    display: none;
+}
+
+.recall-active{
+    background-color: #009688;
+    cursor: pointer;
+}
+
+.disabled-color{
+    background-color: #e6e6e6;
+}
+
+.bolder-color{
+  color: rgba(0,0,0,.87);
+}
+.swal-wide{
+  height: 330px;
+}
+
+[data-tooltip]:before {
+  /* needed - do not touch */
+  content: attr(data-tooltip);
+  position: absolute;
+  opacity: 0;
+  
+  /* customizable */
+  transition: all 0.15s ease;
+  color: #fff;
+  padding: 5px 10px;
+  line-height: 1.2em;
+  /* box-shadow: 2px 2px 1px silver;     */
+}
+
+[data-tooltip]:hover:before {
+  /* needed - do not touch */
+  opacity: 1;
+  
+  /* customizable */
+  background: #666666;
+  margin-top: -10px;
+  margin-left: 35px;
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+  pointer-events: none;
+}
