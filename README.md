@@ -1,2 +1,0 @@
-# queue
- Queue Management System
