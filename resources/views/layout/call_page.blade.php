@@ -11,7 +11,7 @@
   @elseif(Route::current()->getName() == 'display')
   <title>Display</title>
   @else
-  <title>JL Token</title>
+  <title>Kings Token</title>
   @endif
   <link rel="apple-touch-icon" href="{{asset('app-assets/images/icon/favicon.ico')}}">
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/icon/favicon.ico')}}">
@@ -51,11 +51,11 @@
         <div class="nav-wrapper">
           @if(\App::currentLocale() == 'sa')
           <ul class="navbar-list left" style="padding-right: 60px;">
-            <li><span style="font-weight: bold; font-size: x-large; ">JL Token</span></li>
+            <li><span style="font-weight: bold; font-size: x-large; ">Kings Token</span></li>
           </ul>
           @else
           <ul class="navbar-list left" style="padding-left: 60px;">
-            <li><span style="font-weight: bold; font-size: x-large; ">JL Token</span></li>
+            <li><span style="font-weight: bold; font-size: x-large; ">Kings Token</span></li>
           </ul>
           @endif
           <ul class="navbar-list right">
@@ -180,7 +180,7 @@
   <footer class="page-footer footer footer-static navbar-border navbar-shadow noprint" style="padding-right: 10px">
     <div class="footer-copyright">
     <div class="container">
-            <span>Powered by&nbsp;<a href="https://www.justlabtech.com" target="_blank" style="color:#ffffff;font-weight: bolder;">Justlab Technologies</a>&nbsp;All rights reserved</span>
+            <span>Powered by&nbsp;<a href="https://www.kingslee.net" target="_blank" style="color:#ffffff;font-weight: bolder;">Kings Technologies</a>&nbsp;All rights reserved</span>
             <span style="text-align: left; float:left; font-size:13px">Version {{AppVersion::VERSION}}</span>
     </div>
     </div>
@@ -189,7 +189,7 @@
   <footer class="page-footer footer footer-static navbar-border navbar-shadow noprint" style="padding-left: 10px">
     <div class="footer-copyright">
     <div class="container">
-            <span>Powered by&nbsp;<a href="https://www.justlabtech.com" target="_blank" style="color:#ffffff;font-weight: bolder;">Justlab Technologies</a>&nbsp;All rights reserved</span>
+            <span>Powered by&nbsp;<a href="https://www.kingslee.net" target="_blank" style="color:#ffffff;font-weight: bolder;">Kings Technologies</a>&nbsp;All rights reserved</span>
             <span style="text-align: right; float:right; font-size:13px">Version {{AppVersion::VERSION}}</span>
     </div>
     </div>
@@ -198,7 +198,7 @@
   <footer class="page-footer footer footer-static navbar-border navbar-shadow noprint">
     <div class="footer-copyright">
     <div class="container">
-            <span>Powered by&nbsp;<a href="https://www.justlabtech.com" target="_blank" style="color:#ffffff;font-weight: bolder;">Justlab Technologies</a>&nbsp;All rights reserved</span>
+            <span>Powered by&nbsp;<a href="https://www.kingslee.net" target="_blank" style="color:#ffffff;font-weight: bolder;">Kings Technologies</a>&nbsp;All rights reserved</span>
             @if(\App::currentLocale() == 'sa')
             <span style="text-align: left; float:left; font-size:13px">Version {{AppVersion::VERSION}}</span>
             @else

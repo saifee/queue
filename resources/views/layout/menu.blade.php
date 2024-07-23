@@ -2,7 +2,7 @@
   <div class="brand-sidebar">
     <h1 class="logo-wrapper">
       <a class="brand-logo darken-1" style="top: 4px; left: 31px;">
-        <span class="logo-text hide-on-med-and-down" style="color: #fff; font-weight:bold">JL Token</span></a>
+        <span class="logo-text hide-on-med-and-down" style="color: #fff; font-weight:bold">Kings Token</span></a>
       <a class="navbar-toggler" href="#"><i class="material-icons" style="color: #fff;">radio_button_checked</i></a>
     </h1>
   </div>

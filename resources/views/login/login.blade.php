@@ -9,7 +9,7 @@
     <meta name="keywords" content="ASTIN Admin template">
     <meta name="author" content="ThemeSelect">
     <!-- <meta name="_token" content="{!! csrf_token() !!}" /> -->
-    <title>ADMIN LOGIN | JLToken</title>
+    <title>ADMIN LOGIN | Kings Token</title>
     <link rel="apple-touch-icon" href="{{asset('app-assets/images/icon/favicon.ico')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/icon/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -48,7 +48,7 @@
 
                             <div class="row">
                                 <div class="input-field col s12 offset-m4">
-                                    <h5 class="ml-4" style="font-weight: 800;">JL Token</h5>
+                                    <h5 class="ml-4" style="font-weight: 800;">Kings Token</h5>
                                 </div>
                             </div>
                             <div class="row margin">
