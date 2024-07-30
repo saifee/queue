@@ -27,12 +27,29 @@
 </head>
 <!-- END: Head-->
 
-<body class="vertical-layout page-header-light vertical-menu-collapsible vertical-dark-menu preload-transitions 1-column    blank-page blank-page" data-open="click" data-menu="vertical-dark-menu" data-col="1-column" style="background-color: #009688;">
+<body class="vertical-layout page-header-light vertical-menu-collapsible vertical-dark-menu preload-transitions 1-column    blank-page blank-page" data-open="click" data-menu="vertical-dark-menu" data-col="1-column" style="background-color: #73BCFF;">
     <div class="row">
         <div class="col s12">
             <div class="container">
                 <div id="login-page" class="row">
-                    <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
+                    <div 
+                        class="
+                            col 
+                            s12 
+                            l7
+                            z-depth-4 
+                            card 
+                            horizontal
+                            medium
+                            border-radius-6 
+                            login-card 
+                            bg-opacity-8
+                        " 
+                        style="
+                            background-color: #fff;
+                            padding: 32px;
+                        "
+                    >
                         @if (isset($errors) && $errors->has('error'))
                         <div class="card-alert card red lighten-5">
                             <div class="card-content red-text">
@@ -43,27 +60,78 @@
                             </button>
                         </div>
                         @endif
-                        <form id="login_form" class="login-form" method="post" action="{{route('post_login')}}">
+                        <form 
+                            id="login_form" 
+                            class="login-form card-stacked" 
+                            method="post" 
+                            action="{{route('post_login')}}"
+                            style="background-color: #fff; width: 100%;"
+                        >
                             @csrf
 
                             <div class="row">
-                                <div class="input-field col s12 offset-m4">
-                                    <h5 class="ml-4" style="font-weight: 800;">Kings Token</h5>
+                                <div class="input-field col s12">
+                                    <h5 class="ml-4" style="font-weight: bold; color: #73BCFF;">Kings Token</h5>
                                 </div>
                             </div>
                             <div class="row margin">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix pt-2">person_outline</i>
-                                    <input id="email" type="text" name="email" value="{{old('email')}}">
-                                    <label for="email" class="center-align">Email</label>
+                                <i 
+                                    class="col material-icons prefix pt-3"
+                                    "
+                                >person_outline</i>
+                                <div
+                                    class="col "
+                                    style="width:75%;"
+                                >  
+                                    <input 
+                                        id="email" 
+                                        type="text" 
+                                        name="email" 
+                                        class="input-emailplaceholder" 
+                                        value="Email" 
+                                        onfocus="clearEmailPlaceholder(this)" 
+                                        onblur="setEmailPlaceholder(this)"
+                                        style="
+                                            border: 1px solid #ccc; 
+                                            border-radius: 100px;
+                                            padding: 0 16px;
+                                            box-sizing: border-box;
+                                            
+                                            color: #ccc;
+                                        "
+                                    >
                                 </div>
                             </div>
 
-                            <div class="row margin">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix pt-2">lock_outline</i>
-                                    <input id="password" type="password" name="password">
-                                    <label for="password">Password</label>
+                            <div 
+                                class="row margin"
+                            >
+                                <i 
+                                    class="col material-icons prefix pt-3"
+                                    style=""
+                                    
+                                >lock_outline</i>
+                                <div
+                                    class="col "
+                                    style="width:75%;"
+                                > 
+                                    <input 
+                                        id="password" 
+                                        type="password" 
+                                        name="password" 
+                                        class="input-passwordplaceholder" 
+                                        value="Password" 
+                                        onfocus="clearPasswordPlaceholder(this)" 
+                                        onblur="setPasswordPlaceholder(this)"
+                                        style="
+                                            border: 1px solid #ccc; 
+                                            border-radius: 100px;
+                                            padding: 0 16px;
+                                            box-sizing: border-box;
+                                            color: #ccc;
+
+                                        "
+                                    >
                                 </div>
                             </div>
                             <!-- <div class="row">
@@ -76,13 +144,39 @@
                                     </p>
                                 </div>
                             </div> -->
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <button type="submit" class="btn waves-effect waves-light border-round  col s12">Login</button>
+                            <div 
+                                class="row"
+                                style="
+                                    margin: auto 0;  
+                                "
+                            >
+                                <div 
+                                    class="input-field col s12 "
+                                    style="
+                                        margin-top: 25%;
+                                        width: 90%;
+                                    "
+                                >
+                                    <button 
+                                        type="submit" 
+                                        class="btn waves-effect waves-light border-round  col s12" 
+                                        style="background-color: #73BCFF;"
+                                    >Login</button>
                                 </div>
                             </div>
                             <div class="row"  style="text-align: center; padding-bottom: 7px; font-size: 13px">Version {{AppVersion::VERSION}}</div>
                         </form>
+                        <div
+                            class="card-image "
+                            style="max-width: 40%; "
+
+                        >
+                            <img 
+                                src="@/app-assets/images/custom/loginAsset.png" 
+                                alt="Login Asset"
+                                style="margin-top: 15%; width: auto; height: 75%; "
+                            >
+                        </div>
                     </div>
                 </div>
             </div>
@@ -142,6 +236,36 @@
                 .closest(".card-alert")
                 .fadeOut("slow");
         });
+    </script>
+    <script>
+        function clearEmailPlaceholder(input) {
+            if (input.value === "Email") {
+                input.value = "";
+                input.classList.remove("input-emailplaceholder");
+            }
+        }
+
+        function setEmailPlaceholder(input) {
+            if (input.value === "") {
+                input.value = "Email";
+                input.classList.add("input-emailplaceholder");
+            }
+        }
+    </script>
+    <script>
+        function clearPasswordPlaceholder(input) {
+            if (input.value === "Password") {
+                input.value = "";
+                input.classList.remove("input-passwordplaceholder");
+            }
+        }
+
+        function setPasswordPlaceholder(input) {
+            if (input.value === "") {
+                input.value = "Password";
+                input.classList.add("input-passwordplaceholder");
+            }
+        }
     </script>
 </body>
 
