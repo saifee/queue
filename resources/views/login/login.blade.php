@@ -172,7 +172,7 @@
 
                         >
                             <img 
-                                src="@/app-assets/images/custom/loginAsset.png" 
+                                src="{{asset('app-assets/images/custom/loginAsset.png')}}" 
                                 alt="Login Asset"
                                 style="margin-top: 15%; width: auto; height: 75%; "
                             >
