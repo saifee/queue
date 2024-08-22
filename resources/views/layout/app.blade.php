@@ -72,7 +72,9 @@
                          <li><a class="waves-effect waves-block waves-light sidenav-trigger" href="#" data-target="slide-out-right"><i class="material-icons">format_indent_increase</i></a></li> 
                     </ul>
 
+
                     <ul class="dropdown-content" id="translation-dropdown">
+
                         <li class="dropdown-item" onclick="changeLanguage(1)" ontouchstart="changeLanguage(1)"><a class="grey-text text-darken-1" href="#!" data-language="en"><i class="flag-icon flag-icon-gb"></i> English</a></li>
                         <li class="dropdown-item" onclick="changeLanguage(2)" ontouchstart="changeLanguage(2)"><a class="grey-text text-darken-1" href="#!" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a></li>
                         <li class="dropdown-item" onclick="changeLanguage(3)" ontouchstart="changeLanguage(3)"><a class="grey-text text-darken-1" href="#!" data-language="in"><i class="flag-icon flag-icon-in"></i> Hindi</a></li>
@@ -82,7 +84,9 @@
                         <li class="dropdown-item" onclick="changeLanguage(7)" ontouchstart="changeLanguage(7)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-it"></i> Italian</a></li>
                         <li class="dropdown-item" onclick="changeLanguage(8)" ontouchstart="changeLanguage(8)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-id"></i> Indonesian</a></li>
                         <li class="dropdown-item" onclick="changeLanguage(9)" ontouchstart="changeLanguage(9)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-de"></i> German</a></li> 
+
                     </ul>
+
 
                     <ul class="dropdown-content" id="profile-dropdown">
                         @can('view profile')
@@ -92,7 +96,7 @@
                         <li><a class="grey-text text-darken-1" href="{{route('logout')}}" ontouchstart="logout()"><i class="material-icons">keyboard_tab</i> {{__('messages.common.logout')}}</a></li>
                     </ul>
 
-                    <ul class="dropdown-content" id="extra-dropdown">
+                    <!-- <ul class="dropdown-content" id="extra-dropdown">
                         <li><a href="" style="font-weight: 600; color:black">{{__('messages.common.links')}}</a></li>
                         <li class="divider"></li>
                         @can('issue token')
@@ -101,9 +105,12 @@
                         @can('view display')
                         <li><a class="grey-text text-darken-1" ontouchstart="displayUrl()" href="{{route('display')}}" target="_blank"> {{__('messages.menu.display url')}}</a></li>
                         @endcan
+
                          <li class="divider"></li> 
                          <li><a class="grey-text text-darken-1" href="{{route('logout')}}"><i class="material-icons">keyboard_tab</i> Logout</a></li> 
                     </ul>
+
+
 
                 </div>
 
