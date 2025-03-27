@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Kings Token | @yield('title')</title>
+    <title>JL Token | @yield('title')</title>
     <link rel="apple-touch-icon" href="{{asset('app-assets/images/icon/favicon.ico')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/icon/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -38,12 +38,12 @@
 <body class="vertical-layout page-header-light vertical-menu-collapsible vertical-dark-menu preload-transitions 2-columns noprint ">
 
     <!-- BEGIN: Header-->
-    <!-- <header class="page-topbar" id="header">
+    <header class="page-topbar" id="header">
         <div class="navbar navbar-fixed">
             <nav class="navbar-main navbar-color nav-collapsible sideNav-lock">
                 <div class="nav-wrapper">
                     <ul class="navbar-list left" style="padding-left: 60px;">
-                        <li><span style="font-weight: bold; font-size: x-large; ">King Token</span></li>
+                        <li><span style="font-weight: bold; font-size: x-large; ">JL Token</span></li>
                     </ul>
                     <ul class="navbar-list right">
                         @if(isset(session()->get("settings")->logo) && Storage::disk('public')->exists(session()->get("settings")->logo))
@@ -58,7 +58,7 @@
                         @endif
                         <li class="navbar-list left"><a href="{{route('profile')}}"><b>{{session()->get("settings")->name}},{{session()->get("settings")->location}}</b></a></li>
 
-                         <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status "><img src="{{Auth::user()->image_url}}" alt="avatar"></span></a></li> 
+                        <!-- <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status "><img src="{{Auth::user()->image_url}}" alt="avatar"></span></a></li> -->
 
                         <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status ">
                                     @if(isset(Auth::user()->image) && Storage::disk('public')->exists(Auth::user()->image))
@@ -69,24 +69,20 @@
                                 </span></a>
                         </li>
 
-                         <li><a class="waves-effect waves-block waves-light sidenav-trigger" href="#" data-target="slide-out-right"><i class="material-icons">format_indent_increase</i></a></li> 
+                        <!-- <li><a class="waves-effect waves-block waves-light sidenav-trigger" href="#" data-target="slide-out-right"><i class="material-icons">format_indent_increase</i></a></li> -->
                     </ul>
-
 
                     <ul class="dropdown-content" id="translation-dropdown">
-
-                        <li class="dropdown-item" onclick="changeLanguage(1)" ontouchstart="changeLanguage(1)"><a class="grey-text text-darken-1" href="#!" data-language="en"><i class="flag-icon flag-icon-gb"></i> English</a></li>
-                        <li class="dropdown-item" onclick="changeLanguage(2)" ontouchstart="changeLanguage(2)"><a class="grey-text text-darken-1" href="#!" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a></li>
-                        <li class="dropdown-item" onclick="changeLanguage(3)" ontouchstart="changeLanguage(3)"><a class="grey-text text-darken-1" href="#!" data-language="in"><i class="flag-icon flag-icon-in"></i> Hindi</a></li>
-                        <li class="dropdown-item" onclick="changeLanguage(4)" ontouchstart="changeLanguage(4)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-sa"></i> Arabic</a></li>
-                        <li class="dropdown-item" onclick="changeLanguage(5)" ontouchstart="changeLanguage(5)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-es"></i> Spanish</a></li>
-                        <li class="dropdown-item" onclick="changeLanguage(6)" ontouchstart="changeLanguage(6)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></li>
-                        <li class="dropdown-item" onclick="changeLanguage(7)" ontouchstart="changeLanguage(7)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-it"></i> Italian</a></li>
-                        <li class="dropdown-item" onclick="changeLanguage(8)" ontouchstart="changeLanguage(8)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-id"></i> Indonesian</a></li>
-                        <li class="dropdown-item" onclick="changeLanguage(9)" ontouchstart="changeLanguage(9)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-de"></i> German</a></li> 
-
-                    </ul>
-
+            <li class="dropdown-item" onclick="changeLanguage(1)" ontouchstart="changeLanguage(1)"><a class="grey-text text-darken-1" href="#!" data-language="en"><i class="flag-icon flag-icon-gb"></i> English</a></li>
+            <li class="dropdown-item" onclick="changeLanguage(2)" ontouchstart="changeLanguage(2)"><a class="grey-text text-darken-1" href="#!" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a></li>
+            <li class="dropdown-item" onclick="changeLanguage(3)" ontouchstart="changeLanguage(3)"><a class="grey-text text-darken-1" href="#!" data-language="in"><i class="flag-icon flag-icon-in"></i> Hindi</a></li>
+            <li class="dropdown-item" onclick="changeLanguage(4)" ontouchstart="changeLanguage(4)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-sa"></i> Arabic</a></li>
+            <li class="dropdown-item" onclick="changeLanguage(5)" ontouchstart="changeLanguage(5)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-es"></i> Spanish</a></li>
+            <li class="dropdown-item" onclick="changeLanguage(6)" ontouchstart="changeLanguage(6)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></li>
+            <li class="dropdown-item" onclick="changeLanguage(7)" ontouchstart="changeLanguage(7)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-it"></i> Italian</a></li>
+            <li class="dropdown-item" onclick="changeLanguage(8)" ontouchstart="changeLanguage(8)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-id"></i> Indonesian</a></li>
+            <li class="dropdown-item" onclick="changeLanguage(9)" ontouchstart="changeLanguage(9)"><a class="grey-text text-darken-1" href="#!" data-language="sa"><i class="flag-icon flag-icon-de"></i> German</a></li> 
+        </ul>
 
                     <ul class="dropdown-content" id="profile-dropdown">
                         @can('view profile')
@@ -96,7 +92,7 @@
                         <li><a class="grey-text text-darken-1" href="{{route('logout')}}" ontouchstart="logout()"><i class="material-icons">keyboard_tab</i> {{__('messages.common.logout')}}</a></li>
                     </ul>
 
-                    <!-- <ul class="dropdown-content" id="extra-dropdown">
+                    <ul class="dropdown-content" id="extra-dropdown">
                         <li><a href="" style="font-weight: 600; color:black">{{__('messages.common.links')}}</a></li>
                         <li class="divider"></li>
                         @can('issue token')
@@ -105,18 +101,15 @@
                         @can('view display')
                         <li><a class="grey-text text-darken-1" ontouchstart="displayUrl()" href="{{route('display')}}" target="_blank"> {{__('messages.menu.display url')}}</a></li>
                         @endcan
-
-                         <li class="divider"></li> 
-                         <li><a class="grey-text text-darken-1" href="{{route('logout')}}"><i class="material-icons">keyboard_tab</i> Logout</a></li> 
+                        <!-- <li class="divider"></li> -->
+                        <!-- <li><a class="grey-text text-darken-1" href="{{route('logout')}}"><i class="material-icons">keyboard_tab</i> Logout</a></li> -->
                     </ul>
-
-
 
                 </div>
 
             </nav>
         </div>
-    </header> -->
+    </header>
     <!-- END: Header-->
     <!-- BEGIN: SideNav-->
     @include('layout.menu')
@@ -137,7 +130,7 @@
     <footer class="page-footer footer footer-static navbar-border navbar-shadow">
         <div class="footer-copyright">
         <div class="container">
-            <span>Powered by&nbsp;<a href="https://www.kingslee.net" target="_blank" style="color:#ffffff;font-weight: bolder;">Kings Technologies</a>&nbsp;All rights reserved</span>
+            <span>Powered by&nbsp;<a href="https://www.justlabtech.com" target="_blank" style="color:#ffffff;font-weight: bolder;">Justlab Technologies</a>&nbsp;All rights reserved</span>
             @if(\App::currentLocale() == 'sa')
             <span style="text-align: left; float:left; font-size:13px">Version {{AppVersion::VERSION}}</span>
             @else
