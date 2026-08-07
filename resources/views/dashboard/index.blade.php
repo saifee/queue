@@ -1,87 +1,185 @@
 @extends('layout.app')
 @section('title','Dashboard')
 @section('dashboard','active')
-
-@section('css')
-<style>
-    /* GUI Tweaks specific to dashboard */
-    .stat-card-icon {
-        width: 50px; height: 50px; border-radius: 10px;
-        display: flex; align-items: center; justify-content: center;
-        color: white;
-    }
-    .chart-wrapper { position: relative; height: 300px; }
-</style>
-@endsection
-
 @section('content')
-<div class="container-fluid">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-    </div>
 
-    <div class="row g-4 mb-4">
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body d-flex justify-content-between align-items-center">
-                    <div>
-                        <h6 class="text-muted text-uppercase mb-2">{{__('messages.dashboard.today queue')}}</h6>
-                        <h3 class="fw-bold mb-0">{{$today_queue}}</h3>
-                    </div>
-                    <div class="stat-card-icon bg-info bg-gradient">
-                        <i class="material-icons">queue</i>
-                    </div>
-                </div>
+<!-- BEGIN: Page Main-->
+<div id="main">
+   <div id="card-stats" class="pt-0">
+      <div class="row">
+         <div class="col s12 m6 l3">
+            <div class="card ">
+               <div class="card-content cyan white-text">
+                  <p class="card-stats-title">{{__('messages.dashboard.today queue')}}</p>
+                  <h4 class="card-stats-number white-text">{{$today_queue}}</h4>
+                  <p class="card-stats-compare">
+                  </p>
+               </div>
+               <div class="card-action cyan darken-1">
+                  <div id="clients-bar" class="center-align"></div>
+               </div>
             </div>
-        </div>
-        <div class="col-12 col-md-6 col-xl-3">
-            <div class="card border-0 shadow-sm h-100">
-                <div class="card-body d-flex justify-content-between align-items-center">
-                    <div>
-                        <h6 class="text-muted text-uppercase mb-2">{{__('messages.dashboard.today served')}}</h6>
-                        <h3 class="fw-bold mb-0">{{$today_served}}</h3>
-                    </div>
-                    <div class="stat-card-icon bg-danger bg-gradient">
-                        <i class="material-icons">check_circle</i>
-                    </div>
-                </div>
+         </div>
+         <div class="col s12 m6 l3">
+            <div class="card ">
+               <div class="card-content red accent-2 white-text">
+                  <p class="card-stats-title">{{__('messages.dashboard.today served')}}</p>
+                  <h4 class="card-stats-number white-text">{{$today_served}}</h4>
+                  <p class="card-stats-compare">
+                  </p>
+               </div>
+               <div class="card-action red">
+                  <div id="sales-compositebar" class="center-align"></div>
+               </div>
             </div>
-        </div>
-        </div>
-
-    <div class="row g-4">
-        <div class="col-lg-6">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white py-3">
-                    <h5 class="card-title mb-0">{{__('messages.dashboard.today')}}</h5>
-                </div>
-                <div class="card-body">
-                    <div class="chart-wrapper">
-                        <canvas id="avg"></canvas>
-                    </div>
-                </div>
+         </div>
+         <div class="col s12 m6 l3">
+            <div class="card ">
+               <div class="card-content orange lighten-1 white-text">
+                  <p class="card-stats-title"> {{__('messages.dashboard.today noshow')}}</p>
+                  <h4 class="card-stats-number white-text">{{$today_noshow}}</h4>
+                  <p class="card-stats-compare">
+                  </p>
+               </div>
+               <div class="card-action orange">
+                  <div id="profit-tristate" class="center-align"></div>
+               </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white py-3">
-                    <h5 class="card-title mb-0">{{__('messages.dashboard.today vs yesterday')}}</h5>
-                </div>
-                <div class="card-body">
-                    <div class="chart-wrapper">
-                        <canvas id="chart2"></canvas>
-                    </div>
-                </div>
+         </div>
+         <div class="col s12 m6 l3">
+            <div class="card">
+               <div class="card-content green lighten-1 white-text">
+                  <p class="card-stats-title"> {{__('messages.dashboard.today serving')}}</p>
+                  <h4 class="card-stats-number white-text">{{$today_serving}}</h4>
+                  <p class="card-stats-compare">
+                  </p>
+               </div>
+               <div class="card-action green">
+                  <div id="invoice-line" class="center-align"></div>
+               </div>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
+   <div class=row>
+      <div class="col m6 s12">
+         <div class=card-panel>
+            <span style="line-height:0;font-size:22px;font-weight:300">{{__('messages.dashboard.today')}}</span>
+            <div class=divider style="margin:15px 0 10px 0"></div>
+            <div><canvas id="avg" height="260px"></canvas></div>
+         </div>
+      </div>
+      <div class="col m6 s12">
+         <div class=card-panel>
+            <span style="line-height:0;font-size:22px;font-weight:300">{{__('messages.dashboard.today vs yesterday')}}</span>
+            <div class=divider style="margin:15px 0 10px 0"></div>
+            <div><canvas id="chart2" height="260px"></canvas></div>
+         </div>
+      </div>
+   </div>
 </div>
 @endsection
-
 @section('js')
 <script src="{{asset('app-assets/chart.js')}}"></script>
 <script>
-    // ... Keep your existing chart initialization code here ...
-    // Note: ensure your Chart.js config matches the version you are loading.
+   var ChartData = {
+      labels: [
+         "{{__('messages.common.queue')}}",
+         "{{__('messages.common.served')}}",
+         "{{__('messages.common.noshow')}}",
+         "{{__('messages.common.serving')}}",
+      ],
+      datasets: [{
+         label: 'Today',
+         backgroundColor: [
+            'rgb(0, 188, 212)',
+            'rgb(255, 82, 82)',
+            'rgb(255, 167, 38)',
+            'rgb(102, 187, 106)',
+         ],
+         data: ['{{$today_queue}}', '{{$today_served}}', '{{$today_noshow}}', '{{$today_serving}}'],
+         hoverOffset: 4,
+      }]
+   };
+
+   const LineChartData = {
+      labels: ['00:00', '6:00', '12:00', '18:00', '24:00'],
+      datasets: [{
+            label: "{{__('messages.dashboard.today')}}",
+            data: [@foreach($chart_data['today'] as $indx => $data)
+               @if($indx == 0) <?php echo "'$data'"; ?>
+               @else <?php echo ", '$data'"; ?>
+               @endif
+               @endforeach
+            ],
+            borderColor: ['rgb(54, 162, 235)', ],
+            backgroundColor: ['rgb(255,255,255)'],
+            pointStyle: 'circle',
+            pointRadius: 10,
+            pointHoverRadius: 15,
+
+         },
+         {
+            label: "{{__('messages.dashboard.yesterday')}}",
+            data: [@foreach($chart_data['yesterday'] as $indx => $data)
+               @if($indx == 0) <?php echo "'$data'"; ?>
+               @else <?php echo ", '$data'"; ?>
+               @endif
+               @endforeach
+            ],
+            borderColor: ['rgb(255, 99, 132)', ],
+            backgroundColor: ['rgb(255,255,255)'],
+            pointStyle: 'circle',
+            pointRadius: 10,
+            pointHoverRadius: 15
+         }
+      ]
+   };
+
+   $(document).ready(function() {
+      $('.datepicker').datepicker({
+         format: 'yyyy-mm-dd'
+      });
+
+      var ctx = document.getElementById("avg").getContext("2d");
+      window.myBar = new Chart(ctx, {
+         type: 'pie',
+         data: ChartData,
+         options: {
+            maintainAspectRatio: false,
+            radius: 100,
+            responsive: true,
+         }
+      });
+
+      var c2 = document.getElementById("chart2").getContext("2d");
+      window.myBar2 = new Chart(c2, {
+         type: 'line',
+         data: LineChartData,
+         options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+               y: {
+                  min: 0,
+                  title: {
+                     display: true,
+                     text: "{{__('messages.dashboard.number of tokens')}}"
+                  },
+                  ticks: {
+                     stepSize: 1,
+                  }
+               },
+               x: {
+                  title: {
+                     display: true,
+                     text: "{{__('messages.dashboard.time')}}"
+                  },
+               }
+            },
+         }
+      });
+
+   });
 </script>
 @endsection
